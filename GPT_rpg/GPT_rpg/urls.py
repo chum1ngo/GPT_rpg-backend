@@ -17,10 +17,33 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from GPT_rpg import views
-
+from rest_framework.urlpatterns import format_suffix_patterns
 
 # CAMBIAR AQUI URL PARA DESPUES
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('story/', views.story_list)
+    
+    path('story/', views.story_list),
+    path('story/<int:id>', views.story_detail),
+    
+		path('player/', views.player_list),
+		path('player/<int:id>', views.player_detail),
+        
+		path('character/', views.character_list),
+		path('character/<int:id>', views.character_detail),
+        
+		path('trait/', views.trait_list),
+		path('trait/<int:id>', views.trait_detail),
+        
+		path('event/', views.event_list),
+		path('event/<int:id>', views.event_detail),
+      
+		path('world/', views.world_list),
+		path('world/<int:id>', views.world_detail),
+        
+		path('rule/', views.rule_list),
+		path('rule/<int:id>', views.rule_detail),
+    
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
