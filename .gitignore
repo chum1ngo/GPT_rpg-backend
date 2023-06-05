@@ -39,3 +39,9 @@ Thumbs.db
 
 # Folders
 .venv/Lib
+
+# files
+tmp
+db.sqlite3
+.env
+GPT_rpg/db.sqlite3
